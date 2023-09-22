@@ -3,7 +3,7 @@ const { promisify } = require('util')
 const jwt = require('jsonwebtoken')
 const { User } = require('./../models/userModel')
 
-exports.protect = async (err, req, res, next) => {
+exports.protect = async (req, res, next) => {
   // 1) Get the token and check if it's there
 
   let token
@@ -78,7 +78,7 @@ exports.adminAccess = async (req, res, next) => {
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET)
   const currentUser = await User.findById(decoded.user._id)
   if (!currentUser) {
-    return res.status(403).render('error', { errorMessage: 'Unauthorized' })
+    return res.status(403).render('error', { errorMessage: 'Unauthorized ' })
   }
   if (decoded.user.role !== 'admin') {
     return res.status(403).render('error', { errorMessage: 'Unauthorized' })
