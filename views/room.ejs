@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.2/dist/peerjs.min.js"></script>
+  <script defer src="/script.js"></script>
+  <title>Video Chat</title>
+  <style>
+    #video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column size as needed */
+      grid-gap: 20px; /* Add gap between grid items */
+    }
+
+    .video-frame {
+      border: 2px solid #ccc; /* Add border to each video frame */
+      border-radius: 5px; /* Round the corners of the video frame */
+      overflow: hidden; /* Hide overflow content */
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="video-grid" data-room-id="<%= roomId %>" data-join-user="<%= joinUser %>"></div>
+</body>
+</html>

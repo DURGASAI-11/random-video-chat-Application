@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+            color: white; /* Set text color to white */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensure the body takes up the full viewport height */
+            background-image: url('/images/resigter.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        form {
+            text-align: center;
+            padding: 20px;
+           
+        }
+  
+        button {
+            background-color: #0077B5; /* LinkedIn blue color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for background color */
+            box-shadow: 0px 0px 10px rgba(0, 119, 181, 0.5); /* Add a glow effect to the button */
+            margin-top:75% ;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #005FAB; /* Darker blue color on hover */
+        }
+    </style>
+  
+</head>
+<body>
+    <div class="Register"> 
+            <a href="/auth/linkedin"><button>Register with LinkedIn</button></a>
+    </div>
+   
+    <script src="/js/bundle.js"></script>
+</body>
+</html>

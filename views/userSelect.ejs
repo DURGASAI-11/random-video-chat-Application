@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Category and Country</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+   
+    <form>
+        <h1>Select Category and Country</h1>
+        <label for="categorySelect">Select a Category:</label>
+        <select id="categorySelect" name="category">
+            <% categories.forEach(function(category) { %>
+                <option value="<%= category.category %>"><%= category.category %></option>
+            <% }); %>
+        </select>
+
+        <label for="countrySelect">Select a Country:</label>
+        <select id="countrySelect" name="country">
+            <% countries.forEach(function(country) { %>
+                <option value="<%= country.country %>"><%= country.country %></option>
+            <% }); %>
+        </select>
+
+        <button type="submit" class="userSelectionOneTime" data-user-id="<%= user._id %>">Submit</button>
+    </form>
+
+    <script src="/js/bundle.js"></script>
+</body>
+</html>

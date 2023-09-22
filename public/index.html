@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .intro-app {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        overflow: hidden;
+        position: relative;
+      }
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This property scales the video to cover the entire container */
+        z-index: -1;
+      }
+      .textAbt {
+        max-width: 100%;
+        padding: 40px;
+        text-align: center;
+        z-index: 1;
+      }
+      .textAbt h1 {
+        font-size: 2em;
+      }
+      .textAbt p {
+        line-height: 1.5;
+        color: black;
+        padding: 20px 0;
+      }
+      .textAbt button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: black;
+        border: none;
+      }
+      .textAbt button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      /* Media Query for Small Screens */
+      @media (max-width: 768px) {
+        .textAbt {
+          max-width: 100%;
+        }
+        .textAbt button {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="intro-app">
+      <video autoplay loop muted>
+        <source
+          src="/videos/pexels-artem-podrez-6781547 (2160p).mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div class="textAbt">
+        <h1>Random Video Application</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          quis eius sint cumque suscipit maxime quod, eligendi fugiat neque
+          consequuntur adipisci culpa corporis labore soluta officia, amet
+          molestiae magnam. Illo. Incidunt officiis culpa ipsam dolore
+          doloremque, iste ex, deserunt omnis sunt saepe nulla a sed debitis
+          dolores temporibus reprehenderit maiores neque nesciunt ipsa?
+        </p>
+        <button><a href="/api/v1/views/linkedinSignup">explore</a></button>
+      </div>
+    </section>
+  </body>
+</html>
